@@ -63,11 +63,11 @@
     <Folder Include="PreDeployment" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="PostDeployment\DefaultData\Gravity.sql" />
-    <Build Include="PostDeployment\Script.PostDeployment1.sql" />
+    <None Include="PostDeployment\DefaultData\Gravity.sql" />
+    <PostDeploy Include="PostDeployment\Script.PostDeployment1.sql" />
     <Build Include="Tables\tblGravity.sql" />
     <Build Include="StoredProcedures\spCalcForce.sql" />
-    <Build Include="PreDeployment\Script.PreDeployment1.sql" />
+    <PreDeploy Include="PreDeployment\Script.PreDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="local.publish.xml" />
