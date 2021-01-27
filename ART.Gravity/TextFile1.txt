@@ -1,0 +1,5 @@
+Scaffold-DbContext "Server=(localdb)\ProjectsV13;Database=ART.Gravity.DB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer
+
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
