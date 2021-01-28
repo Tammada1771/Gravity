@@ -41,6 +41,9 @@ namespace ART.Gravity.PL
                 entity.Property(e => e.ChangeDate).HasColumnType("datetime");
             });
 
+            // Manually add this for the stored proc
+            modelBuilder.Entity<spCalcForceResult>().HasNoKey();
+
             OnModelCreatingPartial(modelBuilder);
         }
 

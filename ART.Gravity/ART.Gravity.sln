@@ -7,12 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ART.Gravity.BL.Models", "AR
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ART.Gravity.DB", "ART.Gravity.DB\ART.Gravity.DB.sqlproj", "{2B789121-FBA8-4B9B-BCF2-3E82EE2CC4DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ART.Gravity.PL", "ART.Gravity.PL\ART.Gravity.PL.csproj", "{94915A0D-6CFC-4F54-9F5F-69C848C290F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ART.Gravity.PL", "ART.Gravity.PL\ART.Gravity.PL.csproj", "{94915A0D-6CFC-4F54-9F5F-69C848C290F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E3CC2A7-E5D1-463E-8314-12FA826B1953}"
 	ProjectSection(SolutionItems) = preProject
 		TextFile1.txt = TextFile1.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ART.Gravity.PL.Test", "ART.Gravity.PL.Test\ART.Gravity.PL.Test.csproj", "{DCF00BF5-E6EC-484A-9676-2752B869F84D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{94915A0D-6CFC-4F54-9F5F-69C848C290F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94915A0D-6CFC-4F54-9F5F-69C848C290F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94915A0D-6CFC-4F54-9F5F-69C848C290F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF00BF5-E6EC-484A-9676-2752B869F84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF00BF5-E6EC-484A-9676-2752B869F84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF00BF5-E6EC-484A-9676-2752B869F84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF00BF5-E6EC-484A-9676-2752B869F84D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
