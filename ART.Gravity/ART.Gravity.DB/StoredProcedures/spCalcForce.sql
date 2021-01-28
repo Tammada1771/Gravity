@@ -4,6 +4,6 @@
 	@Distance float
 AS
 	DECLARE @Gravity AS float
-	SET @Gravity = (6.674E-11)
+	SET @Gravity = 6.674E-11
 	SELECT (@Gravity * @MassOne * @MassTwo) / POWER(@Distance, 2) AS Force
 RETURN 0

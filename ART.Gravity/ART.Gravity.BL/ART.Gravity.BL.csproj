@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ART.Gravity.BL.Models\ART.Gravity.BL.Models.csproj" />
+    <ProjectReference Include="..\ART.Gravity.PL\ART.Gravity.PL.csproj" />
+  </ItemGroup>
+
+</Project>

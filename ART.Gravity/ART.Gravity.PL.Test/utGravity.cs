@@ -44,30 +44,31 @@ namespace ART.Gravity.PL.Test
         {
             double expected = 8.008E-10;
             double? actual = 0;
+            
 
             var parameterMass1 = new SqlParameter
             {
                 ParameterName = "MassOne",
-                SqlDbType = System.Data.SqlDbType.Decimal,
+                SqlDbType = System.Data.SqlDbType.Float,
                 Value = 3
             };
 
             var parameterMass2 = new SqlParameter
             {
                 ParameterName = "MassTwo",
-                SqlDbType = System.Data.SqlDbType.Decimal,
+                SqlDbType = System.Data.SqlDbType.Float,
                 Value = 4
             };
 
             var parameterDistance = new SqlParameter
             {
                 ParameterName = "Distance",
-                SqlDbType = System.Data.SqlDbType.Decimal,
+                SqlDbType = System.Data.SqlDbType.Float,
                 Value = 1
             };
 
-            // get an error because it cant convert a double to single. tried just about everything i could look up
-            var results = dc.Set<spCalcForceResult>().FromSqlRaw("exec spCalcForce @MassOne, @MassTwo, @Distance", parameterMass1, parameterMass2, parameterDistance).ToList();
+            // get an error because it cant convert a double to single. tried just about everything i could look up, talked about in Video 6
+           var results = dc.Set<spCalcForceResult>().FromSqlRaw("exec spCalcForce @MassOne, @MassTwo, @Distance", parameterMass1, parameterMass2, parameterDistance);
 
             foreach(var r in results)
             {
@@ -95,6 +96,51 @@ namespace ART.Gravity.PL.Test
             dc.TblGravities.Add(newrow);
             actual = dc.SaveChanges();
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void UpdateTest()
+        {
+            InsertTest();
+
+
+            tblGravity row = dc.TblGravities.Where(g => g.MassOne == 10 && g.MassTwo == 12 && g.Distance == 2).FirstOrDefault();
+
+            int actual = 0;
+
+            if (row != null)
+            {
+                row.MassOne = 6;
+                row.MassTwo = 7;
+                row.Distance = 8;
+                actual = dc.SaveChanges();
+
+            }
+
+            Assert.IsTrue(actual > 0);
+
+        }
+
+        [TestMethod]
+        public void DeleteTest()
+        {
+            InsertTest();
+
+
+            tblGravity row = dc.TblGravities.Where(g => g.MassOne == 10 && g.MassTwo == 12 && g.Distance == 2).FirstOrDefault();
+
+            int actual = 0;
+
+            if (row != null)
+            {
+
+                dc.TblGravities.Remove(row);
+
+                actual = dc.SaveChanges();
+
+            }
+
+            Assert.IsTrue(actual > 0);
         }
     }
 }
