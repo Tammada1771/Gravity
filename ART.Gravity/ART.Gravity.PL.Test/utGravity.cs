@@ -42,32 +42,32 @@ namespace ART.Gravity.PL.Test
         [TestMethod]
         public void CalcForceTest()
         {
-            double expected = 8.008E-10;
+            double expected = 8.008799999999999E-10;
             double? actual = 0;
             
 
             var parameterMass1 = new SqlParameter
             {
                 ParameterName = "MassOne",
-                SqlDbType = System.Data.SqlDbType.Float,
+                SqlDbType = System.Data.SqlDbType.Decimal,
                 Value = 3
             };
 
             var parameterMass2 = new SqlParameter
             {
                 ParameterName = "MassTwo",
-                SqlDbType = System.Data.SqlDbType.Float,
+                SqlDbType = System.Data.SqlDbType.Decimal,
                 Value = 4
             };
 
             var parameterDistance = new SqlParameter
             {
                 ParameterName = "Distance",
-                SqlDbType = System.Data.SqlDbType.Float,
+                SqlDbType = System.Data.SqlDbType.Decimal,
                 Value = 1
             };
 
-            // get an error because it cant convert a double to single. tried just about everything i could look up, talked about in Video 6
+           
            var results = dc.Set<spCalcForceResult>().FromSqlRaw("exec spCalcForce @MassOne, @MassTwo, @Distance", parameterMass1, parameterMass2, parameterDistance);
 
             foreach(var r in results)

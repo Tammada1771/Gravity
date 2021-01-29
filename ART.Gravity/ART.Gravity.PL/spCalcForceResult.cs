@@ -8,6 +8,6 @@ namespace ART.Gravity.PL
 {
     public class spCalcForceResult
     {
-        public float Force { get; set; }
+        public double Force { get; set; }
     }
 }
