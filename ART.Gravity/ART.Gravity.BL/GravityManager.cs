@@ -24,6 +24,7 @@ namespace ART.Gravity.BL
                     tblgravity.Id = Guid.NewGuid();
                     tblgravity.MassOne = (double)gravity.Mass1;
                     tblgravity.MassTwo = (double)gravity.Mass2;
+                    tblgravity.Force = (double)gravity.Force;
                     tblgravity.Distance = (double)gravity.Distance;
                     tblgravity.ChangeDate = DateTime.Now;
 
@@ -133,6 +134,32 @@ namespace ART.Gravity.BL
                         ChangeDate = g.ChangeDate,
                         
                     }));
+                    return gravities;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static List<BL.Models.Gravity> LoadForDataBox()
+        {
+            try
+            {
+                List<BL.Models.Gravity> gravities = new List<Models.Gravity>();
+
+                using (GravityEntities dc = new GravityEntities())
+                {
+                    dc.TblGravities.ToList().ForEach(g => gravities.Add(new BL.Models.Gravity
+                    {
+                        Mass1 = (float)g.MassOne,
+                        Mass2 = (float)g.MassTwo,
+                        Distance = (float)g.Distance,
+                        Force = (float)g.Force
+                    }));
+
                     return gravities;
                 }
             }
